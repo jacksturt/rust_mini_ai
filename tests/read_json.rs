@@ -2,7 +2,7 @@ extern crate image;
 
 use image::{ImageBuffer, Luma};
 const IMAGE_PATH: &str = "black_and_white_image.png";
-const DATA_PATH: &str = "data/mnist/x_train_single.json";
+const DATA_PATH: &str = "data/mnist/x_train_ten.json";
 
 #[test]
 fn visualize() {

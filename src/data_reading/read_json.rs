@@ -35,7 +35,7 @@ pub fn read_json_to_vec_vec_f64(path: &str) -> Result<Vec<Vec<f64>>, Box<dyn Err
         })
         .collect::<Result<Vec<Vec<f64>>, Box<dyn Error>>>()?;
 
-    print!("{:?}", converted_to_array_of_arrays);
+    // print!("{:?}", converted_to_array_of_arrays);
 
     Ok(converted_to_array_of_arrays)
 }

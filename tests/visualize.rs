@@ -1,9 +1,17 @@
+use std::error::Error;
+
+use candle_datasets::vision::mnist;
+
 extern crate image;
 
-const IMAGE_PATH: &str = "black_and_white_image.png";
-const DATA_PATH: &str = "data/mnist/x_train.json";
-
 #[test]
-fn visualize() {
-    miniai::visualization::black_and_white::black_and_white();
+pub fn visualize() -> Result<(), Box<dyn Error>> {
+    let mnist = mnist::load()?;
+    let image = mnist.test_images.get(1)?;
+    let result =
+        miniai::visualization::black_and_white::convert_one_dim_tensor_to_square_black_and_white_jpg(
+            image,
+        );
+
+    Ok(())
 }
